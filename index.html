@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rae+Co Hair Studio | Hair Salon in Clinton, MA</title>
+<meta name="description" content="Rae+Co Hair Studio in Clinton, MA. A collective of independent stylists offering color, cuts, extensions, nails, esthetics and bridal. Book online.">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="img/icon-192.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf6f0; --bg2:#f1e9de; --ink:#1f2a24; --muted:#5c6159; --green:#2c4a3b; --rose:#a8456f; --line:#e2d8c9; --card:#fff;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#141a17;--bg2:#1b2320;--ink:#f1ebe0;--muted:#a3aaa1;--green:#8fb59f;--rose:#e08bb0;--line:#2c3631;--card:#1f2824}
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font:16px/1.65 var(--sans);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+section{padding:96px 0}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1}
+h2{font-size:clamp(34px,5vw,52px);margin-bottom:16px}
+.eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);font-weight:600;margin-bottom:14px}
+.lead{color:var(--muted);max-width:620px;font-size:18px}
+.btn{display:inline-block;padding:14px 28px;border-radius:999px;background:var(--green);color:#fff;text-decoration:none;font-weight:500;font-size:14px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--green);transition:.2s;cursor:pointer;font-family:inherit}
+.btn:hover{transform:translateY(-1px);opacity:.92}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn:not(.ghost),:root:not([data-theme="light"]) .notice,:root:not([data-theme="light"]) .tag{color:#10201a}}
+
+/* nav */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.25s}
+header.solid{background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--serif);font-size:26px;text-decoration:none;font-weight:600;letter-spacing:.02em;color:#fff;transition:.25s}
+header.solid .logo{color:var(--ink)}
+.logo span{color:var(--rose)}
+nav ul{display:flex;gap:28px;list-style:none;padding:0}
+nav a{text-decoration:none;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#fff;transition:.25s}
+header.solid nav a{color:var(--ink)}
+nav a:hover{color:var(--rose)}
+.nav .btn{padding:10px 20px;font-size:12px}
+.burger{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
+header.solid .burger{color:var(--ink)}
+@media(max-width:900px){
+  .burger{display:block}
+  nav{position:fixed;inset:68px 0 auto 0;background:var(--bg);border-bottom:1px solid var(--line);padding:20px;display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:18px}
+  nav a{color:var(--ink)}
+  .nav .btn.book-top{display:none}
+}
+
+/* hero */
+.hero{color:#fff;padding:120px 0 72px;background:#18261f}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero-photo{width:100%;max-height:calc(100svh - 190px);aspect-ratio:914/1024;object-fit:contain;justify-self:center;border-radius:18px}
+@media(max-width:860px){
+  .hero{padding:84px 0 48px}
+  .hero .wrap{grid-template-columns:1fr;gap:32px}
+  .hero-photo{order:-1;max-height:none}
+}
+.hero h1{font-size:clamp(46px,7vw,92px);font-weight:500}
+.hero h1 em{color:#f3c6da}
+.hero p{max-width:540px;font-size:19px;margin:22px 0 34px;opacity:.9}
+.hero .btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero .btn{background:#fff;color:#1f2a24;border-color:#fff}
+.hero .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
+.notice{background:var(--green);color:#fff;text-align:center;padding:12px 20px;font-size:14px}
+.notice a{font-weight:600}
+
+/* about */
+.about{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
+.about img{border-radius:200px 200px 16px 16px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.about p+p{margin-top:16px}
+.perks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:64px}
+.perk{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.perk h3{font-size:24px;margin-bottom:8px}
+.perk p{color:var(--muted);font-size:15px}
+@media(max-width:800px){.about{grid-template-columns:1fr;gap:36px}}
+
+/* team */
+.alt{background:var(--bg2)}
+.team{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px;margin-top:48px}
+.member{background:var(--card);border-radius:18px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.member img{aspect-ratio:4/4.6;object-fit:cover;width:100%;object-position:center top}
+.member .body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+.member h3{font-size:30px}
+.role{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--rose);font-weight:600}
+.member p{color:var(--muted);font-size:15px;flex:1}
+.member .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.member .btn{padding:10px 18px;font-size:12px}
+.pill{font-size:13px;text-decoration:none;border-bottom:1px solid var(--line);padding:10px 4px;color:var(--muted)}
+.pill:hover{color:var(--rose)}
+.disclaimer{margin-top:40px;padding:22px 26px;border:1px dashed var(--line);border-radius:14px;color:var(--muted);font-size:15px}
+
+/* services */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:36px 0 28px}
+.tab{padding:10px 20px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;font:500 14px var(--sans)}
+.tab[aria-selected="true"]{background:var(--green);color:#fff;border-color:var(--green)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tab[aria-selected="true"]{color:#10201a}}
+.menu{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:36px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px 56px}
+.menu h3{font-size:28px;margin-bottom:10px;color:var(--green);border-bottom:1px solid var(--line);padding-bottom:8px}
+.row{display:flex;justify-content:space-between;gap:16px;padding:8px 0;font-size:15.5px}
+.row b{font-weight:600;white-space:nowrap}
+.note{margin-top:16px;color:var(--muted);font-size:14px}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:64px}
+.pillars h3{font-size:26px;margin-bottom:8px}
+.pillars p{color:var(--muted);font-size:15px}
+
+/* gallery */
+.gallery{columns:3 260px;column-gap:14px;margin-top:40px}
+.gallery img{width:100%;height:auto;margin-bottom:14px;border-radius:12px;cursor:zoom-in;transition:.2s}
+.gallery img:hover{transform:scale(1.015)}
+.socials{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:36px}
+.socials a{display:flex;justify-content:space-between;padding:14px 18px;border:1px solid var(--line);border-radius:12px;text-decoration:none;background:var(--card);font-size:15px}
+.socials a:hover{border-color:var(--rose);color:var(--rose)}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:100;cursor:zoom-out;padding:20px}
+#lb.on{display:flex}
+#lb img{max-height:92vh;border-radius:8px}
+
+/* promos */
+.promos{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:40px}
+.promo{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px}
+.promo h3{font-size:28px;margin-bottom:10px}
+.promo p{color:var(--muted);font-size:15px;margin-bottom:10px}
+.tag{display:inline-block;background:var(--rose);color:#fff;border-radius:999px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;margin-bottom:14px}
+
+/* weddings */
+.coming{text-align:center;max-width:640px;margin:0 auto}
+
+/* join / contact */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+@media(max-width:860px){.split{grid-template-columns:1fr}}
+.list{list-style:none;padding:0;margin:20px 0}
+.list li{padding:8px 0 8px 28px;position:relative;color:var(--muted);font-size:15px}
+.list li::before{content:"✦";position:absolute;left:0;color:var(--rose)}
+form{display:grid;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px}
+label{font-size:13px;font-weight:500;display:grid;gap:6px}
+input,textarea{font:inherit;padding:13px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+input:focus,textarea:focus{outline:2px solid var(--rose);outline-offset:1px}
+.ok{display:none;color:var(--green);font-weight:500}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:36px}
+.contact-grid div{padding:24px;border:1px solid var(--line);border-radius:16px;background:var(--card)}
+.contact-grid h3{font-size:22px;margin-bottom:6px}
+.contact-grid a{color:var(--rose);text-decoration:none}
+iframe{width:100%;height:320px;border:0;border-radius:16px;margin-top:24px;filter:saturate(.85)}
+.sticky-book{display:none}
+@media(max-width:900px){
+  .sticky-book{display:flex;gap:10px;position:fixed;inset:auto 0 0 0;z-index:60;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+  .sticky-book .btn{flex:1;text-align:center;padding:13px 10px}
+  .sticky-book .btn.ghost{flex:0 0 auto;padding:13px 20px}
+}
+footer{padding:36px 0;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+@media(max-width:900px){footer{padding-bottom:90px}}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="logo" href="#top">Rae<span>+</span>Co</a>
+    <nav id="nav">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Our Work</a></li>
+        <li><a href="#weddings">Weddings</a></li>
+        <li><a href="#promotions">Promotions</a></li>
+        <li><a href="#join">Join Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn book-top" href="https://www.vagaro.com/raecohairstudio/book-now" target="_blank" rel="noopener">Book Now</a>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow" style="color:#f3c6da">Clinton, Massachusetts</p>
+      <h1>Where confidence <em>begins</em>.</h1>
+      <p>Hair, lashes, nails &amp; more from a collective of independent beauty professionals. Everyone is welcome here.</p>
+      <div class="btns">
+        <a class="btn" href="https://www.vagaro.com/raecohairstudio/book-now" target="_blank" rel="noopener">Book Now</a>
+        <a class="btn ghost" href="tel:+19787331126">Call or Text Us</a>
+      </div>
+    </div>
+    <img class="hero-photo" src="img/g1.jpg" alt="The Rae+Co team standing under the Rae+Co Hair Studio sign">
+  </div>
+</div>
+<div class="notice">Now offering hair extension services. <a href="https://www.vagaro.com/raecohairstudio/book-now" target="_blank" rel="noopener">Book your free consultation</a></div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about">
+      <div>
+        <p class="eyebrow">About</p>
+        <h2>Style meets connection.</h2>
+        <p class="lead">At Rae+Co, we believe beauty is more than a look. It's a feeling. Our team of talented independent beauty professionals creates personalized experiences that leave every guest feeling confident, refreshed, and cared for.</p>
+        <p>From lived-in color and extensions to precision cuts and luxury treatments, we combine artistry with expertise to bring your vision to life. We are proud to be a diverse, inclusive, and multicultural salon where all guests feel comfortable, valued, and celebrated.</p>
+        <p><strong>Our story.</strong> Established in 2009 as Textures Salon, Beth opened a two-chair salon in Clinton with a mission to provide high-quality services at reasonable prices. It has grown into a thriving 5-station salon with a nail technician and a luxurious spa room, filled with talented independent professionals and amazing guests, now called Rae+Co.</p>
+        <p><strong>Our approach.</strong> Whether you've never been to a salon, you're starting a fresh new look, or reaching for a long-term goal, our commitment is to collaborate and move you toward it.</p>
+      </div>
+      <img src="img/g5.jpg" alt="Rae+Co guest with freshly styled hair" loading="lazy">
+    </div>
+    <div class="perks">
+      <div class="perk"><h3>The experience</h3><p>Complimentary seltzer, soft drinks, spring water, tea, coffee and a full snack bar. Free Wi-Fi, phone charging, a complimentary head massage at the shampoo bowl and a warm blowout.</p></div>
+      <div class="perk"><h3>Spa room</h3><p>A beautiful soundproof spa room with an esthetic experience customized to your needs.</p></div>
+      <div class="perk"><h3>Woman owned</h3><p>Woman-owned and staffed by an all-women team serving individuals of any gender.</p></div>
+      <div class="perk"><h3>Inclusive</h3><p>An inclusive space for the LGBTQ+ community, welcoming all with no judgement. Spanish-speaking team members can help bridge the communication gap.</p></div>
+      <div class="perk"><h3>Accessible</h3><p>Wheelchair accessible with accessible parking, room to maneuver, service animals welcome, and adjustments to services where we can.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="team" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Our Team</p>
+    <h2>Meet the Rae+Co professionals.</h2>
+    <p class="lead">We are now a team of independent service providers. All of the professionals own their own businesses within Rae+Co.</p>
+    <div class="team" id="teamGrid"></div>
+    <p class="disclaimer">If you have any questions or concerns regarding booking a service, please contact your service provider directly.</p>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <p class="eyebrow">Services &amp; Pricing</p>
+    <h2>Let's make your hair beautiful together.</h2>
+    <p class="lead">Pricing is set by each independent provider. Choose a provider to see their menu.</p>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="menu" id="menu" role="tabpanel"></div>
+    <p class="note" id="menuNote"></p>
+    <p style="margin-top:28px"><a class="btn" href="https://www.vagaro.com/raecohairstudio/book-now" target="_blank" rel="noopener">Book Now</a></p>
+
+    <div class="pillars">
+      <div><h3>Consultancy</h3><p>Tailored to unlock your potential and steer you toward the perfect look. Unsure what you want? We'll turn any hair challenge into a beautiful opportunity.</p></div>
+      <div><h3>Hair, Skin &amp; Nails</h3><p>A holistic, natural approach to beauty products, with modern techniques and the health of your body in mind.</p></div>
+      <div><h3>Training</h3><p>Our independent stylists keep investing in training to elevate their skills, techniques and product knowledge.</p></div>
+      <div><h3>Support</h3><p>If you're not happy with your service, we'll do everything we can to make it right. Please note all providers are independent; consult your provider directly with any concern.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Our Work</p>
+    <h2>Fresh from the chair.</h2>
+    <p class="lead">Follow each provider on Instagram for a deeper dive into their individual portfolios.</p>
+    <div class="gallery" id="gallery"></div>
+    <div class="socials">
+      <a href="https://www.instagram.com/raecohairstudio/" target="_blank" rel="noopener">Rae+Co Studio <span>↗</span></a>
+      <a href="https://www.instagram.com/raecohairstudio/" target="_blank" rel="noopener">Beth · Hair <span>↗</span></a>
+      <a href="https://www.instagram.com/bangs_and_balayage/" target="_blank" rel="noopener">Saraya · Hair <span>↗</span></a>
+      <a href="https://www.instagram.com/jshairbeautysalon/" target="_blank" rel="noopener">Shirley · Hair <span>↗</span></a>
+      <a href="https://www.instagram.com/beauty.by.ktpackard/" target="_blank" rel="noopener">Katie · Hair <span>↗</span></a>
+      <a href="https://www.instagram.com/hairdesignbymags/" target="_blank" rel="noopener">Maggie · Hair <span>↗</span></a>
+      <a href="https://www.instagram.com/maggie_bridalrushboston/" target="_blank" rel="noopener">Maggie · Makeup <span>↗</span></a>
+      <a href="https://www.instagram.com/lottynails_/" target="_blank" rel="noopener">Lotty · Nails <span>↗</span></a>
+      <a href="https://www.instagram.com/bad_gal_esthetics" target="_blank" rel="noopener">Jurnee · Esthetics <span>↗</span></a>
+      <a href="https://www.instagram.com/bad_gal_mua/" target="_blank" rel="noopener">Jurnee · Makeup <span>↗</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="weddings">
+  <div class="wrap coming">
+    <p class="eyebrow">Weddings &amp; Special Events</p>
+    <h2>Information coming soon.</h2>
+    <p class="lead" style="margin:0 auto 28px">For special occasions and quotes, reach out to Maggie, our bridal hair and makeup artist.</p>
+    <a class="btn" href="tel:+19788551507">Call or text Maggie</a>
+  </div>
+</section>
+
+<section id="promotions" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Promotions &amp; Retail</p>
+    <h2>Products we love.</h2>
+    <div class="promos">
+      <div class="promo"><span class="tag">New</span><h3>Bokka Botanika</h3><p>Mindfully created without any suspected or potentially harmful ingredients, formulated with ethically and sustainably sourced raw materials. Highly concentrated for long-term use in one bottle.</p><p>Clean beauty, a balance of science and nature. <strong>Starting at $25+</strong></p></div>
+      <div class="promo"><span class="tag">Coming soon</span><h3>Rae+Co Renew</h3><p>Our own plant-based, cruelty-free, no-harmful-ingredients haircare line. Minerals and botanical protein catalysts for healthy, smooth, soft, strong hair that shines and holds color. Shampoos and conditioners are color and keratin safe for all hair types, including wigs and extensions.</p><p><strong>Starting at $20+</strong> · 15% off this holiday season for Beth's and Katie's guests.</p></div>
+      <div class="promo"><span class="tag">Seasonal</span><h3>Crystal bracelets &amp; gift certificates</h3><p>Crystal bracelets starting at only $5, great for holiday gifts. Gift certificates are available in any denomination.</p><p><a href="tel:+19787331126" style="color:var(--rose)">Call to purchase</a></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="join">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Join Our Team</p>
+      <h2>Be your own boss.</h2>
+      <p class="lead">Rentals are currently full. Please inquire to be placed on our wait list. Call Beth at <a href="tel:+19787331126">978-733-1126</a>.</p>
+      <p style="margin-top:16px;color:var(--muted)">A beautiful, spacious 1,200 sq ft space with 6 stations and 1 suite, with low rental costs and flexible contracts. Suites can be expensive with risky terms and hidden costs. Here we handle the furnishings, back bar and tools, and help you build your clientele while you rent.</p>
+      <ul class="list">
+        <li>Free advertising on our socials and website</li>
+        <li>Share of salon booking system while you build your clientele</li>
+        <li>Walk-in opportunities</li>
+        <li>Free Wi-Fi, coffee, drinks and snacks for guests</li>
+        <li>Lockable storage, capes, aprons, robes, towels, color mixing tools</li>
+        <li>Retail area for your own use</li>
+        <li>Shared monthly cleaning, twice-yearly team branding session, group training</li>
+      </ul>
+      <p style="color:var(--muted);font-size:14px">All inquiries are confidential. You can also text Beth at 774-641-3618 or message us on Facebook/Instagram.</p>
+    </div>
+    <form id="rentForm">
+      <h3 style="font-size:28px">Station rental inquiry</h3>
+      <label>Name<input name="name" required autocomplete="name"></label>
+      <label>Email<input name="email" type="email" required autocomplete="email"></label>
+      <label>Message<textarea name="message" rows="5"></textarea></label>
+      <button class="btn" type="submit">Contact us</button>
+      <p class="ok" id="ok">Thank you for your response. ✨</p>
+    </form>
+  </div>
+</section>
+
+<section id="contact" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2>Come say hello.</h2>
+    <div class="contact-grid">
+      <div><h3>Visit</h3><p>1175 Main Street<br>Clinton, MA 01510</p><p><a href="https://www.google.com/maps/search/?api=1&query=1175+Main+Street+Clinton+MA+01510" target="_blank" rel="noopener">Get directions</a></p></div>
+      <div><h3>Call or text</h3><p><a href="tel:+19787331126">978-733-1126</a></p></div>
+      <div><h3>Email</h3><p><a href="mailto:RaeandcoMa@gmail.com">RaeandcoMa@gmail.com</a></p></div>
+      <div><h3>Book</h3><p><a href="https://www.vagaro.com/raecohairstudio/book-now" target="_blank" rel="noopener">Book online on Vagaro</a></p></div>
+    </div>
+    <iframe title="Map" loading="lazy" src="https://www.google.com/maps?q=1175+Main+Street+Clinton+MA+01510&output=embed"></iframe>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© <span id="yr"></span> Rae+Co Hair Studio · Clinton, MA</span><span>Woman owned · All welcome</span></div></footer>
+
+<div class="sticky-book">
+  <a class="btn" href="https://www.vagaro.com/raecohairstudio/book-now" target="_blank" rel="noopener">Book Now</a>
+  <a class="btn ghost" href="tel:+19787331126">Call</a>
+</div>
+
+<div id="lb"><img alt=""></div>
+
+<script>
+const BOOK='https://www.vagaro.com/raecohairstudio/book-now';
+const TEAM=[
+ {id:'beth',name:'Beth',role:'Owner · Master Colorist · Extension Specialist',img:'img/beth.jpg',bio:'Over 20 years in the hair industry. Beth opened Textures Salon in 2009 and has years of experience educating and training stylists. She specializes in color correction, all extension techniques, balayage, highlighting and semi-permanent thinning hair restoration.',cta:['Request Beth',BOOK]},
+ {id:'maggie',name:'Maggie',role:'Master Hairstylist · Bridal Makeup Artist',img:'img/maggie.jpg',bio:'10 years in the beauty industry. Extremely knowledgeable with curly hair, a blonding specialist, and owner of her own bridal business where she travels as a makeup artist. She also offers extension services.',cta:['Call or text Maggie','tel:+19788551507']},
+ {id:'saraya',name:'Saraya',role:'Master Hairstylist · Barber',img:'img/saraya.jpg',bio:'20 years in the hair industry, specializing in women\'s, children\'s and men\'s haircutting, balayage, highlighting, color and more.',cta:['Book with Saraya',BOOK]},
+ {id:'shirley',name:'Shirley',role:'Hairstylist · Barber · Founder of Js Hair & Beauty',img:'img/shirley.jpg',bio:'3 years in the industry with a natural gift for connection and creativity. Fluent in English and Spanish. Specializes in color, haircutting, extensions, keratin treatments and highlighting.',cta:['Book with Shirley',BOOK]},
+ {id:'katie',name:'Katie',role:'Hairstylist · Barber',img:'img/katie.jpg',bio:'Our newest addition, fresh to the salon floor and full of talent and heart. Whether it\'s a fresh haircut, a soft color transformation or a simple styling refresh, Katie is all about listening, learning and delivering results you\'ll love.',cta:['Book with Katie',BOOK]},
+ {id:'lotty',name:'Lotty',role:'Master Nail Artist · Founder of Lotty Nails',img:'img/lotty.jpg',bio:'Years of experience and a true passion for creativity, from timeless manicures and pedicures to bold, on-trend nail art and customized creations. Every set is beautiful and built to last.',cta:['Book with Lotty',BOOK]},
+ {id:'jurnee',name:'Jurnee',role:'Master Esthetician · Founder of Bad Gal Esthetics',img:'img/jurnee.jpg',bio:'Licensed esthetician, makeup artist, certified lash artist and spray tan tech. Specializes in lash extensions, full body waxing, facials, spray tans, makeup applications and more.',cta:['Book with Jurnee','https://www.vagaro.com/badgalesthetics/book-now']}
+];
+const IG={beth:'raecohairstudio',saraya:'bangs_and_balayage',shirley:'jshairbeautysalon',katie:'beauty.by.ktpackard',maggie:'hairdesignbymags',lotty:'lottynails_',jurnee:'bad_gal_esthetics'};
+document.getElementById('teamGrid').innerHTML=TEAM.map(m=>`
+<article class="member"><img src="${m.img}" alt="${m.name}" loading="lazy">
+<div class="body"><h3>${m.name}</h3><div class="role">${m.role}</div><p>${m.bio}</p>
+<div class="actions"><a class="btn" href="${m.cta[1]}" ${m.cta[1].startsWith('http')?'target="_blank" rel="noopener"':''}>${m.cta[0]}</a>
+<a class="pill" href="#services" data-svc="${m.id}">View pricing</a>
+<a class="pill" href="https://www.instagram.com/${IG[m.id]}/" target="_blank" rel="noopener">Instagram</a></div></div></article>`).join('');
+
+const MENUS={
+ beth:{n:'Beth',note:'Shown are the most popular services. Inquire about additional services. All prices subject to change based on hair length, thickness and difficulty.',s:{
+  'Hair':[['Haircut (includes blow dry)','$55'],['Short haircut / barber cut','$35'],['Blowout / styling','$45'],['Bang trim / clean up','$20'],['Child\'s cut (under age 5)','$38'],['Iron work add-on','$25+'],['Shampoo only','$20']],
+  'Color':[['Root re-touch','$109+'],['Single process color','$120+'],['Partial highlights','$140+'],['Full highlights','$160+'],['Color correction','$150 / hour'],['Full balayage','$200+'],['Partial balayage','$150+']],
+  'Extensions':[['Tape-in install','$150'],['Tape-in adjustment','$190'],['Sew-in weft install','$150 / row'],['Sew-in adjustment','$120 / row'],['K-tip install','$5 / strand'],['Extension removals','$50+']]}},
+ maggie:{n:'Maggie',note:'Call or text 978-855-1507. Travel fee applies to bridal makeup.',s:{
+  'Cut & Style':[['Haircut blowdry','$55'],['Haircut no blowdry','$35'],['Wash blowdry curls','$55'],['Conditioning treatment blowdry','$60'],['Keratin treatment','$300+'],['Brow wax','$20']],
+  'Color':[['Root touch-up','$125+'],['All over color','$155+'],['Full highlights','$215+'],['Partial highlights','$175+'],['Partial balayage','$180+'],['Full balayage','$225+'],['Platinum card foil','$300+'],['Gloss / toner blowdry','$100+'],['Add-on cut','$50']],
+  'Extensions & Makeup':[['Extensions','$100 / row'],['Bride makeup','$150+'],['Bridesmaid makeup','$120+'],['Bridal trial','$190'],['Event makeup','$120']]}},
+ saraya:{n:'Saraya',note:'Bangs & Balayage by Saraya.',s:{
+  'Hair design':[['Haircut','$50'],['Haircut, no blow dry','$30'],['Kids haircut (10 and under)','$25']],
+  'Color':[['Root re-touch','$75'],['Full single process color','$100'],['Toner refresh','$35']],
+  'Highlights':[['Full highlights','$150'],['Balayage','$150+'],['Partial highlight','$130']]}},
+ shirley:{n:'Shirley',note:'Js Hair & Beauty.',s:{
+  'Cut & Style':[['Haircut & blow dry','$50'],['Haircut, no blow dry','$30'],['Kids cut','$30'],['Blow out','$40'],['Brazilian blow out','$300+']],
+  'Color':[['Root retouch','$75'],['Single process color','$100'],['Full highlight','$150'],['Full balayage','$150']]}},
+ katie:{n:'Katie',note:'15% off Rae+Co Renew haircare this holiday season.',s:{
+  'Cut & Style':[['Haircut blow dry','$50'],['Haircut only','$30'],['Kids cut','$25']],
+  'Color':[['Single process','$100'],['Full foil','$150'],['Full balayage','$150+'],['Partial balayage','$130+']]}},
+ lotty:{n:'Lotty',note:'Nail services. Book online or contact Lotty directly for pricing.',s:{}},
+ jurnee:{n:'Jurnee',note:'Esthetics, lashes, waxing, spray tans and makeup. Book online or contact Jurnee directly for pricing.',s:{}}
+};
+const tabs=document.getElementById('tabs'),menu=document.getElementById('menu'),mnote=document.getElementById('menuNote');
+function show(id){
+  [...tabs.children].forEach(b=>b.setAttribute('aria-selected',b.dataset.id===id));
+  const m=MENUS[id],secs=Object.entries(m.s);
+  menu.innerHTML=secs.length?secs.map(([t,r])=>`<div><h3>${t}</h3>${r.map(x=>`<div class="row"><span>${x[0]}</span><b>${x[1]}</b></div>`).join('')}</div>`).join(''):`<div><h3>${m.n}</h3><p style="color:var(--muted)">Pricing for ${m.n}'s services is available when you book.</p></div>`;
+  mnote.textContent=m.note;
+}
+Object.entries(MENUS).forEach(([id,m])=>{const b=document.createElement('button');b.className='tab';b.role='tab';b.dataset.id=id;b.textContent=m.n+"'s pricing";b.onclick=()=>show(id);tabs.appendChild(b)});
+show('beth');
+document.querySelectorAll('[data-svc]').forEach(a=>a.addEventListener('click',()=>show(a.dataset.svc)));
+
+const gal=document.getElementById('gallery'),lb=document.getElementById('lb');
+const GDIM=[[914,1024],[1024,683],[761,1024],[1024,858],[683,1024],[683,1024],[939,1024],[720,1024],[683,1024],[879,1024],[683,1024],[709,1024]];
+for(let i=1;i<=12;i++){const im=document.createElement('img');im.width=GDIM[i-1][0];im.height=GDIM[i-1][1];im.src=`img/g${i}.jpg`;im.alt='Rae+Co hair work';im.loading='lazy';im.onclick=()=>{lb.firstElementChild.src=im.src;lb.classList.add('on')};gal.appendChild(im)}
+lb.onclick=()=>lb.classList.remove('on');
+addEventListener('keydown',e=>e.key==='Escape'&&lb.classList.remove('on'));
+
+const hdr=document.getElementById('hdr'),nav=document.getElementById('nav');
+const onScroll=()=>hdr.classList.toggle('solid',scrollY>40);onScroll();addEventListener('scroll',onScroll,{passive:true});
+document.getElementById('burger').onclick=()=>nav.classList.toggle('open');
+nav.addEventListener('click',e=>e.target.tagName==='A'&&nav.classList.remove('open'));
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+document.getElementById('rentForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const f=new FormData(e.target);
+  location.href=`mailto:RaeandcoMa@gmail.com?subject=${encodeURIComponent('Station rental inquiry')}&body=${encodeURIComponent(`Name: ${f.get('name')}\nEmail: ${f.get('email')}\n\n${f.get('message')}`)}`;
+  document.getElementById('ok').style.display='block';
+});
+</script>
+</body>
+</html>
